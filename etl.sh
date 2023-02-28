@@ -2,8 +2,10 @@
 
 # VARIABLES
 WORKSPACE=$(pwd)
-INPUT="EXPORT"
-OUTPUT="PHOTOS"
+INPUT="$1"
+OUTPUT="$2"
+
+if [[ "$1" == "" ]] || [[ "$2" == "" ]]; then echo "Usage: ./etl.sh SOURCE_FOLDER DESTINATION_FOLDER"; exit 1; fi
 
 # FUNCTIONS
 function whitespace_to_underscore() {
